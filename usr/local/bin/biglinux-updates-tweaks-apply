@@ -1,5 +1,11 @@
 #!/bin/bash
 #Tweaks to fix updates
 
+# Fix to upgrade in 2022-02-06
+pacman -Qi jack2 pipewire-jack 2> /dev/null > /dev/null
 
-echo ""
+if [ "$?" = "0" ]; then
+    (echo y; echo y) | pacman -S pipewire-jack
+fi
+
+
