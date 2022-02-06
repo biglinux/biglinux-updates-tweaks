@@ -5,7 +5,7 @@
 pacman -Qi jack2 pipewire-jack 2> /dev/null > /dev/null
 
 if [ "$?" = "0" ]; then
-    (echo y; echo y) | pacman -S pipewire-jack
+    (echo y; echo y) | LANG=C pacman -S pipewire-jack
 fi
 
 
