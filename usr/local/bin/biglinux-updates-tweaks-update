@@ -2,6 +2,6 @@
 #Tweaks to fix updates
 
 
-(echo y; echo y) | pacman -Sy biglinux-updates-tweaks
+(echo y; echo y) | LANG=C pacman -Sy biglinux-updates-tweaks
 
 /usr/local/bin/biglinux-updates-tweaks-apply
