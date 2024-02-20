@@ -1,0 +1,20 @@
+post_upgrade() {
+
+    if grep -q http://manjaro.biglinux.com.br /etc/pacman.d/mirrorcdn; then
+
+        echo '## Static mirrors from CDNs
+
+## CDN from cloudflare
+Server = http://mirrors.cicku.me/manjaro/testing/$repo/$arch
+
+## CDN from CDN77
+Server = http://mirrors.manjaro.org/repo/testing/$repo/$arch
+
+## CDN from CDN77 too
+Server = http://mirrors2.manjaro.org/repo/testing/$repo/$arch
+
+Include=/etc/pacman.d/mirrorlist' > /etc/pacman.d/mirrorcdn
+
+    fi
+
+}

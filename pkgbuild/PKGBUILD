@@ -11,6 +11,7 @@ url="https://github.com/biglinux/biglinux-updates-tweaks"
 pkgdesc="Tweaks to improve system updates"
 source=("git+https://github.com/biglinux/biglinux-updates-tweaks.git")
 md5sums=(SKIP)
+install=biglinux-updates-tweaks.install
 
 package() {
     # Verify default folder
