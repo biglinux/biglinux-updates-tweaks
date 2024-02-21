@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if LANG=C pacman -Si pacman 2>&1 >&- | grep -q 'error: could not read db'; then
+
+    echo 'error: could not read db'
+    exit 1
+else
+    exec /usr/sbin/pamac-checkupdates
+fi
