@@ -34,7 +34,7 @@ Server = http://mirrors.cicku.me/manjaro/$version/\$repo/\$arch
 ## CDN from CDN77 too
 Server = http://mirrors.manjaro.org/repo/$version/\$repo/\$arch
 
-Include=/etc/pacman.d/mirrorlist" #> /etc/pacman.d/mirrorcdn
+Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
 
         fi
     fi
