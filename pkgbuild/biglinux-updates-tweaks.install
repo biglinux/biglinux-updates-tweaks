@@ -36,6 +36,8 @@ Server = http://mirrors.manjaro.org/repo/$version/\$repo/\$arch
 
 Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
 
+
+pacman -Sy
         fi
     fi
 
