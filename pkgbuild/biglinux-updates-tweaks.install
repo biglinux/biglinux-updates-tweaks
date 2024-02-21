@@ -36,8 +36,11 @@ Server = http://mirrors.manjaro.org/repo/$version/\$repo/\$arch
 
 Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
 
-
+# update repository info
+mv /var/lib/pacman/db.lck  /var/lib/pacman/db-bkp.lck
 pacman -Sy
+mv /var/lib/pacman/db-bkp.lck  /var/lib/pacman/db.lck
+
         fi
     fi
 
