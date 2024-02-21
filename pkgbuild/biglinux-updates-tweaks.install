@@ -1,20 +1,22 @@
 post_upgrade() {
 
-    # Verify if mirrorcdn have manjaro.biglinux.com.br
-    if grep -q http://manjaro.biglinux.com.br /etc/pacman.d/mirrorcdn \
-    || grep -m1 '[^#]+Server' /etc/pacman.d/mirrorcdn | grep -q 'http://mirrors.cicku.me/manjaro/'; then
-
+    # Filter active servers
+    servers=$(grep -v '.*#.*Server' /etc/pacman.d/mirrorcdn | grep Server)
+    
+    # If have one of these two addresses, replace file content
+    if echo "$servers" | grep -q -e 'http://manjaro.biglinux.com.br' -e 'http://mirrors2.manjaro.org/repo/'; then   
+  
         # Verify first Server line for stable
-        version=$(grep -E -m1 '[^#]+Server' /etc/pacman.d/mirrorcdn | grep -o '\bstable\b')
+        version=$(echo "$servers" | grep -m1 'Server' /etc/pacman.d/mirrorcdn | grep -o '\bstable\b')
 
         # Verify first Server line for testing
         if [[ -z $version ]]; then
-            version=$(grep -E -m1 '[^#]+Server' /etc/pacman.d/mirrorcdn | grep -o '\btesting\b')
+            version=$(echo "$servers" | grep -m1 'Server' /etc/pacman.d/mirrorcdn | grep -o '\btesting\b')
         fi
 
         # Verify first Server line for unstable
         if [[ -z $version ]]; then
-            version=$(grep -E -m1 '[^#]+Server' /etc/pacman.d/mirrorcdn | grep -o '\bunstable\b')
+            echo "$servers" | grep -m1 'Server' /etc/pacman.d/mirrorcdn | grep -o '\bunstable\b'
         fi
 
         # Verify about version correctly detected before apply
@@ -32,7 +34,7 @@ Server = http://mirrors.cicku.me/manjaro/$version/\$repo/\$arch
 ## CDN from CDN77 too
 Server = http://mirrors.manjaro.org/repo/$version/\$repo/\$arch
 
-Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
+Include=/etc/pacman.d/mirrorlist" #> /etc/pacman.d/mirrorcdn
 
         fi
     fi
