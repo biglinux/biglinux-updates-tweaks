@@ -1,7 +1,8 @@
 post_upgrade() {
 
     # Verify if mirrorcdn have manjaro.biglinux.com.br
-    if grep -q http://manjaro.biglinux.com.br /etc/pacman.d/mirrorcdn; then
+    if grep -q http://manjaro.biglinux.com.br /etc/pacman.d/mirrorcdn \
+    || grep -m1 '[^ #]*Server' /etc/pacman.d/mirrorcdn | grep -q 'http://mirrors.cicku.me/manjaro/'; then
 
         # Verify first Server line for stable
         version=$(grep -E -m1 '[^#]*Server' /etc/pacman.d/mirrorcdn | grep -o '\bstable\b')
@@ -22,14 +23,14 @@ post_upgrade() {
             # Make new mirrorcdn file
             echo "## Static mirrors from CDNs
 
+## CDN from CDN77
+Server = http://mirrors2.manjaro.org/$version/\$repo/\$arch
+
 ## CDN from cloudflare
 Server = http://mirrors.cicku.me/manjaro/$version/\$repo/\$arch
 
-## CDN from CDN77
-Server = http://mirrors.manjaro.org/repo/$version/\$repo/\$arch
-
 ## CDN from CDN77 too
-Server = http://mirrors2.manjaro.org/repo/$version/\$repo/\$arch
+Server = http://mirrors.manjaro.org/repo/$version/\$repo/\$arch
 
 Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
 
