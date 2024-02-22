@@ -8,6 +8,6 @@ Target = polkit
 [Action]
 Description = Polkit verification
 When = PostTransaction
-Exec = /bin/sh -c 'if [[ -e /etc/pam.d/polkit-1 ]] && [[ "$(cat /etc/pam.d/polkit-1 | wc -l)" == "1" ]] && grep -q 'session   required    pam_limits.so' /etc/pam.d/polkit-1; then rm /etc/pam.d/polkit-1; fi'
+Exec = /bin/sh -c 'if [[ -e /etc/pam.d/polkit-1 ]] && [[ "$(cat /etc/pam.d/polkit-1 | wc -l)" == "1" ]] && grep -q "session   required    pam_limits.so" /etc/pam.d/polkit-1; then rm /etc/pam.d/polkit-1; fi'
 
 
