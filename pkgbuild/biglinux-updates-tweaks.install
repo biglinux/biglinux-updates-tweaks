@@ -44,4 +44,8 @@ mv /var/lib/pacman/db-bkp.lck  /var/lib/pacman/db.lck
         fi
     fi
 
+    # Add biglinux-updates-tweaks to SyncFirst
+    if [ -z "$(grep -Ei '(SyncFirst).*(biglinux-updates-tweaks)' /etc/pacman.conf)" ]; then
+        sed -i '/SyncFirst/s/$/ biglinux-updates-tweaks/' /etc/pacman.conf
+    fi
 }
