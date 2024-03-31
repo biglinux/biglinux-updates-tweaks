@@ -1,0 +1,6 @@
+[Unit]
+Description=Delete /etc/pam.d/polkit-1 when modified
+
+[Service]
+Type=oneshot
+ExecStart=/bin/rm -f /etc/pam.d/polkit-1
