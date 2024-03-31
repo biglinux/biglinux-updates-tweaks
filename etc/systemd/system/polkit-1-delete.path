@@ -3,7 +3,7 @@ Description=Monitor /etc/pam.d/polkit-1 for modifications
 
 [Path]
 PathChanged=/etc/pam.d/polkit-1
-Unit=delete-polkit-1.service
+Unit=polkit-1-delete.service
 
 [Install]
 WantedBy=multi-user.target
