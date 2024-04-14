@@ -1,0 +1,11 @@
+[Unit]
+Description=Checks if ntp is active, if it is disabled, activates it.
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=bash -c "if [ "$(timedatectl | grep 'NTP service' | sed 's/^.*: //')" != "active" ]; then timedatectl set-ntp true; fi"
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

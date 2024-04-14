@@ -50,8 +50,10 @@ mv /var/lib/pacman/db-bkp.lck  /var/lib/pacman/db.lck
     fi
 
     systemctl enable --now polkit-1-delete.path
+    systemctl enable --now timedate-check.service
 }
 
 post_install() {
     systemctl enable --now polkit-1-delete.path
+    systemctl enable --now timedate-check.service
 }
