@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the biglinux-updates-tweaks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biglinux-updates-tweaks\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "Making adjustments to the system..."
+msgstr "Effectuer des ajustements sur le système..."
+
+msgid "BigLinux Update"
+msgstr "Mise à jour de BigLinux"
+
+msgid ""
+"\\n"
+"BigLinux is pleased to bring you a major update! \\n"
+"\\n"
+"As part of this update, we are introducing new desktop layouts to further enhance your user "
+"experience. \\n"
+"\\n"
+"Please be aware that, due to this change, <span foreground='red' font='NotoSans Nerd Font Bold'>all "
+"customizations to your desktop layout will be lost. \\n"
+"</span> This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related "
+"customizations.\\n"
+msgstr ""
+"\\n"
+"BigLinux est heureux de vous apporter une mise à jour majeure ! \\n"
+"\\n"
+"Dans le cadre de cette mise à jour, nous introduisons de nouveaux agencements de bureau pour "
+"améliorer davantage votre expérience utilisateur. \\n"
+"\\n"
+"Veuillez noter que, en raison de ce changement, <span foreground='red' font='NotoSans Nerd Font "
+"Bold'>toutes les personnalisations de votre agencement de bureau seront perdues. \\n"
+"</span> Cela inclut les icônes, les fonds d'écran, les arrangements de panneaux, les widgets et "
+"toutes autres personnalisations liées à l'agencement."

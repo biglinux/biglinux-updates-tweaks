@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the biglinux-updates-tweaks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biglinux-updates-tweaks\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "Making adjustments to the system..."
+msgstr "システムの調整を行っています..."
+
+msgid "BigLinux Update"
+msgstr "BigLinux アップデート"
+
+msgid ""
+"\\n"
+"BigLinux is pleased to bring you a major update! \\n"
+"\\n"
+"As part of this update, we are introducing new desktop layouts to further enhance your user "
+"experience. \\n"
+"\\n"
+"Please be aware that, due to this change, <span foreground='red' font='NotoSans Nerd Font Bold'>all "
+"customizations to your desktop layout will be lost. \\n"
+"</span> This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related "
+"customizations.\\n"
+msgstr ""
+"\\n"
+"BigLinuxは大規模なアップデートを提供できて嬉しく思います！\\n"
+"\\n"
+"このアップデートの一環として、新しいデスクトップレイアウトを導入して、ユーザーエクスペリエンスをさらに向上させます。\\n"
+"\\n"
+"この変更により、<span foreground='red' font='NotoSans Nerd Font "
+"Bold'>デスクトップレイアウトへのすべてのカスタマイズが失われることに注意してください。\\n"
+"</span>これにはアイコン、壁紙、パネル配置、ウィジェット、およびその他のレイアウト関連のカスタマイズが含まれます。\\n"
