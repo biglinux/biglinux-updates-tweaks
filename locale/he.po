@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the biglinux-updates-tweaks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biglinux-updates-tweaks\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "Making adjustments to the system..."
+msgstr "ביצוע שינויים במערכת..."
+
+msgid "BigLinux is pleased to bring you a major update!"
+msgstr "BigLinux שמחה להביא לך עדכון ראשי!"
+
+msgid ""
+"As part of this update, we are introducing new desktop layouts to further enhance your user "
+"experience."
+msgstr "כחלק מעדכון זה, אנו מציגים תצורות שולחן עבודה חדשות לשיפור נוסף של חוויית המשתמש שלך."
+
+msgid "Please be aware that, due to this change,"
+msgstr "שים לב כי, בשל שינוי זה,"
+
+msgid "all customizations to your desktop layout will be lost."
+msgstr "כל ההתאמות המותאמות אישית לפריסת השולחן יאבדו."
+
+msgid ""
+"This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related "
+"customizations."
+msgstr "זה כולל צלמיות, טפטים, סידורי פאנל, ווידג'טים, וכל ההתאמות הקשורות לפריסת הממשק."
+
+msgid "BigLinux Update"
+msgstr "עדכון BigLinux"

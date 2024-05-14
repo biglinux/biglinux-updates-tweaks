@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the biglinux-updates-tweaks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biglinux-updates-tweaks\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "Making adjustments to the system..."
+msgstr "调整系统中..."
+
+msgid "BigLinux is pleased to bring you a major update!"
+msgstr "BigLinux很高兴为您带来一次重大更新！"
+
+msgid ""
+"As part of this update, we are introducing new desktop layouts to further enhance your user "
+"experience."
+msgstr "作为此更新的一部分，我们正在推出新的桌面布局，以进一步提升您的用户体验。"
+
+msgid "Please be aware that, due to this change,"
+msgstr "请注意，由于这个更改，"
+
+msgid "all customizations to your desktop layout will be lost."
+msgstr "您的桌面布局所有自定义将会丢失。"
+
+msgid ""
+"This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related "
+"customizations."
+msgstr "这包括图标、壁纸、面板布局、小部件和其他与布局相关的自定义设置。"
+
+msgid "BigLinux Update"
+msgstr "BigLinux 更新"

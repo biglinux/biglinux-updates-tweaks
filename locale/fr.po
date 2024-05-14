@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the biglinux-updates-tweaks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biglinux-updates-tweaks\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "Making adjustments to the system..."
+msgstr "Effectuer des ajustements sur le système..."
+
+msgid "BigLinux is pleased to bring you a major update!"
+msgstr "BigLinux est heureux de vous apporter une mise à jour majeure !"
+
+msgid ""
+"As part of this update, we are introducing new desktop layouts to further enhance your user "
+"experience."
+msgstr ""
+"Dans le cadre de cette mise à jour, nous introduisons de nouveaux agencements de bureau pour "
+"améliorer davantage votre expérience utilisateur."
+
+msgid "Please be aware that, due to this change,"
+msgstr "Veuillez noter qu'en raison de ce changement,"
+
+msgid "all customizations to your desktop layout will be lost."
+msgstr "toutes les personnalisations apportées à la disposition de votre bureau seront perdues."
+
+msgid ""
+"This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related "
+"customizations."
+msgstr ""
+"Cela inclut des icônes, des fonds d'écran, des agencements de panneaux, des widgets et toute autre "
+"personnalisation liée à la mise en page."
+
+msgid "BigLinux Update"
+msgstr "Mise à jour de BigLinux"
