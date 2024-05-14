@@ -51,6 +51,15 @@ mv /var/lib/pacman/db-bkp.lck  /var/lib/pacman/db.lck
 
     systemctl enable --now polkit-1-delete.path
     systemctl enable --now timedate-check.service
+    
+    # Zenity de Atualização Plasma 6
+    if [ ! -d /usr/share/bigbashview/apps ]; then
+        if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+            for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
+                zenity --info --text="O BigLinux está feliz em trazer uma grande atualização para você! \n \n Como parte desta atualização, estamos introduzindo novos layouts de desktop para melhorar ainda mais sua experiência de uso. \n \nPor favor, esteja ciente de que, devido a essa mudança, <span foreground='red' font='NotoSans Nerd Font Bold'>todas as customizações de layout do seu desktop serão perdidas.</span> Isso inclui ícones, papéis de parede, disposição de painéis, widgets e quaisquer outras personalizações relacionadas ao layout.\n" --ok-label="OK"
+            done
+        fi
+    fi
 }
 
 post_install() {
