@@ -1,0 +1,9 @@
+[Unit]
+Description=Update Monitoring
+
+[Path]
+PathExists=/var/lib/pacman/db.lck
+Unit=update-monitoring.service
+
+[Install]
+WantedBy=default.target
