@@ -6,7 +6,6 @@ export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=biglinux-updates-tweaks
 
 dialogo() {
-  # Dialogo de Atualização Plasma 6
   if [ "$(pacman -Q | grep biglinux-session-and-themes | awk '{print $2}' | sed 's/\.//g;s/-.*//')" -lt "240513" ]; then
     if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
       yad --center \
@@ -17,13 +16,15 @@ dialogo() {
           --button="OK":0 \
           --geometry=600x100 --fixed \
           --on-top
-      #         zenity --info --text="O BigLinux está feliz em trazer uma grande atualização para você! \n \nComo parte desta atualização, estamos introduzindo novos layouts de desktop para melhorar ainda mais sua experiência de uso. \n \nPor favor, esteja ciente de que, devido a essa mudança, <span foreground='red' font='NotoSans Nerd Font Bold'>todas as customizações de layout do seu desktop serão perdidas.</span> Isso inclui ícones, papéis de parede, disposição de painéis, widgets e quaisquer outras personalizações relacionadas ao layout.\n" --ok-label="OK"
       while [ -e /var/lib/pacman/db.lck ]; do
-              sleep 3
+        sleep 3
       done
       while [ -n "$(pgrep pamac-manager)" ]; do
-          sleep 3
+        sleep 3
       done
+      if [ -e "arquivo" ];then
+        
+      fi
     fi
   fi
 }
