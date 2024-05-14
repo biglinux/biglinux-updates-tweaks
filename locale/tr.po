@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the biglinux-updates-tweaks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biglinux-updates-tweaks\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "Making adjustments to the system..."
+msgstr "Sistemi ayarlamak..."
+
+msgid "BigLinux Update"
+msgstr "BigLinux Güncelleme"
+
+msgid ""
+"\\n"
+"BigLinux is pleased to bring you a major update! \\n"
+"\\n"
+"As part of this update, we are introducing new desktop layouts to further enhance your user "
+"experience. \\n"
+"\\n"
+"Please be aware that, due to this change, <span foreground='red' font='NotoSans Nerd Font Bold'>all "
+"customizations to your desktop layout will be lost. \\n"
+"</span> This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related "
+"customizations.\\n"
+msgstr ""
+"\\n"
+"BigLinux, size bir ana güncelleme sunmaktan memnuniyet duyar! \\n"
+"\\n"
+"Bu güncelleme kapsamında, kullanıcı deneyiminizi daha da geliştirmek için yeni masaüstü düzenleri "
+"tanıtıyoruz. \\n"
+"\\n"
+"Bu değişiklik nedeniyle, masaüstü düzeninize yapılan tüm özelleştirmelerin kaybolacağını lütfen "
+"unutmayın. \\n"
+"Bu, simgeler, duvar kağıtları, panel düzenleri, widget'lar ve diğer düzenlemeyle ilgili "
+"özelleştirmeleri içerir.\\n"
