@@ -41,6 +41,9 @@ while true : ; do
   elif [ -n "$(pgrep pamac-manager)" ]; then
     dialogo
   fi
+  if grep -q 'org.biglinux.batteryandperformance' ~/.config/plasma-org.kde.plasma.desktop-appletsrc &&  [[ -e /usr/sbin/kwriteconfig6 ]]; then
+    /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
+  fi
   sleep 5
 done
 
