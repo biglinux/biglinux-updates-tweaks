@@ -28,8 +28,8 @@ dialogo() {
       while [ -n "$(pgrep pamac-manager)" ]; do
         sleep 3
       done
-      if [ -e "arquivo" ];then
-        
+      if [[ -e /usr/sbin/kwriteconfig6 ]]; then
+        /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
       fi
     fi
   fi
