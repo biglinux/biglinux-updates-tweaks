@@ -6,6 +6,7 @@ pkgrel=$(date +%H%M)
 arch=('any')
 license=('GPL')
 depends=('biglinux-keyring')
+conflicts=('krunner5')
 # depends_aarch64=('biglinux-arm-keyring')
 url="https://github.com/biglinux/biglinux-updates-tweaks"
 pkgdesc="Tweaks to improve system updates"
