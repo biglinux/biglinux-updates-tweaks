@@ -5,6 +5,12 @@ LANGUAGE=$LANG:en
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=biglinux-updates-tweaks
 
+text1=$"BigLinux is pleased to bring you a major update!"
+text2=$"As part of this update, we are introducing new desktop layouts to further enhance your user experience."
+text3=$"Please be aware that, due to this change,"
+text4=$"all customizations to your desktop layout will be lost."
+text5=$"This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related customizations."
+
 dialogo() {
   if [ "$(pacman -Q | grep biglinux-session-and-themes | awk '{print $2}' | sed 's/\.//g;s/-.*//')" -lt "240513" ]; then
     if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
@@ -12,7 +18,7 @@ dialogo() {
           --title=$"BigLinux Update" \
           --form \
           --text-align=center \
-          --text=$"\nBigLinux is pleased to bring you a major update! \n\nAs part of this update, we are introducing new desktop layouts to further enhance your user experience. \n\nPlease be aware that, due to this change, <span foreground='red' font='NotoSans Nerd Font Bold'>all customizations to your desktop layout will be lost. \n</span> This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related customizations.\n" \
+          --text="\n$text1 \n\n$text2 \n\n$text3 <span foreground='red' font='NotoSans Nerd Font Bold'>$text4 \n</span> $text5\n" \
           --button="OK":0 \
           --geometry=600x100 --fixed \
           --on-top
