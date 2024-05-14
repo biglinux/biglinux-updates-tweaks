@@ -1,11 +1,16 @@
 #!/bin/bash
 #Tweaks to fix updates
 
+#Translation
+LANGUAGE=$LANG:en
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=biglinux-updates-tweaks
+
 pacman -Qu biglinux-updates-tweaks 2> /dev/null > /dev/null
 
 if [ "$?" = "0" ]; then
 
-    pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true /usr/local/bin/biglinux-updates-tweaks-update | zenity --progress --pulsate --no-cancel --auto-close --text $"Fazendo ajustes no sistema..."
+    pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true /usr/local/bin/biglinux-updates-tweaks-update | zenity --progress --pulsate --no-cancel --auto-close --text $"Making adjustments to the system..."
 
 fi
 
