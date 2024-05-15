@@ -36,10 +36,10 @@ Server = http://mirrors.manjaro.org/repo/$version/\$repo/\$arch
 
 Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
 
-# update repository info
-mv /var/lib/pacman/db.lck  /var/lib/pacman/db-bkp.lck
-pacman -Sy
-mv /var/lib/pacman/db-bkp.lck  /var/lib/pacman/db.lck
+    # update repository info
+    mv /var/lib/pacman/db.lck  /var/lib/pacman/db-bkp.lck
+    pacman -Sy
+    mv /var/lib/pacman/db-bkp.lck  /var/lib/pacman/db.lck
 
         fi
     fi
@@ -49,6 +49,7 @@ mv /var/lib/pacman/db-bkp.lck  /var/lib/pacman/db.lck
         sed -i '/SyncFirst/s/$/ biglinux-updates-tweaks/' /etc/pacman.conf
     fi
 
+    # rm polkit-1
     systemctl enable --now polkit-1-delete.path
     systemctl enable --now timedate-check.service
 
@@ -56,6 +57,9 @@ mv /var/lib/pacman/db-bkp.lck  /var/lib/pacman/db.lck
     for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
         sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl --user enable --now update-monitoring.service
     done
+
+    # Update Menus
+    systemctl enable --now update-aplications-menu.service
 }
 
 post_install() {

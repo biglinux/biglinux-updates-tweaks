@@ -1,0 +1,12 @@
+[Unit]
+Description=Updata Applications Menu
+After=multi-user.target
+
+
+[Service]
+Type=oneshot
+ExecStart=update-desktop-database -q /usr/share/applications/
+
+
+[Install]
+WantedBy=multi-user.target

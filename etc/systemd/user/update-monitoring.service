@@ -4,8 +4,6 @@ Description=Update Monitoring
 [Service]
 # Type=oneshot
 ExecStart=/usr/local/bin/update-monitoring
-# ExecStop=systemctl restart --user update-monitoring.path
-
 
 [Install]
 WantedBy=default.target
