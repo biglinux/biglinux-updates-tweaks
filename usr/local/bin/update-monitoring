@@ -13,24 +13,22 @@ text5=$"This includes icons, wallpapers, panel arrangements, widgets, and any ot
 
 dialogo() {
   if [ "$(pacman -Q biglinux-session-and-themes | awk '{print $2}' | sed 's/\.//g;s/-.*//')" -lt "240513" ]; then
-    
-      yad --center \
-          --title=$"BigLinux Update" \
-          --form \
-          --text-align=center \
-          --text="\n$text1 \n\n$text2 \n\n$text3 <span foreground='red' font='NotoSans Nerd Font Bold'>$text4 \n</span> $text5\n" \
-          --button="OK":0 \
-          --geometry=600x100 --fixed \
-          --on-top
-      while [ -e /var/lib/pacman/db.lck ]; do
-        sleep 3
-      done
-      while [ -n "$(pgrep pamac-manager)" ]; do
-        sleep 3
-      done
-      if [[ -e /usr/sbin/kwriteconfig6 ]]; then
-        /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
-      fi
+    yad --center \
+        --title=$"BigLinux Update" \
+        --form \
+        --text-align=center \
+        --text="\n$text1 \n\n$text2 \n\n$text3 <span foreground='red' font='NotoSans Nerd Font Bold'>$text4 \n</span> $text5\n" \
+        --button="OK":0 \
+        --geometry=600x100 --fixed \
+        --on-top
+    while [ -e /var/lib/pacman/db.lck ]; do
+      sleep 3
+    done
+    while [ -n "$(pgrep pamac-manager)" ]; do
+      sleep 3
+    done
+    if [[ -e /usr/sbin/kwriteconfig6 ]]; then
+      /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
     fi
   fi
 }
