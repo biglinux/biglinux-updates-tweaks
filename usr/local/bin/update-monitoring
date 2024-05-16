@@ -45,7 +45,10 @@ while true : ; do
     /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
   elif [ -d ~/.local/share/plasma/plasmoids/org.kde.netspeedWidget -a -d ~/.local/share/plasma/plasmoids/org.kde.windowtitle ] &&  [[ -e /usr/sbin/kwriteconfig6 ]]; then
     /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
+  elif [ -L ~/.local/share/plasma/plasmoids/org.kde.plasma.systemtray ];then
+    /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
   fi
+
   sleep 5
 done
 
