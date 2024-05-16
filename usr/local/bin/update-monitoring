@@ -43,6 +43,8 @@ while true : ; do
   fi
   if grep -q 'org.biglinux.batteryandperformance' ~/.config/plasma-org.kde.plasma.desktop-appletsrc &&  [[ -e /usr/sbin/kwriteconfig6 ]]; then
     /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
+  elif [ -d ~/.local/share/plasma/plasmoids/org.kde.netspeedWidget -a -d ~/.local/share/plasma/plasmoids/org.kde.windowtitle ] &&  [[ -e /usr/sbin/kwriteconfig6 ]]; then
+    /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
   fi
   sleep 5
 done
