@@ -12,8 +12,8 @@ text4=$"all customizations to your desktop layout will be lost."
 text5=$"This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related customizations."
 
 dialogo() {
-  if [ "$(pacman -Q | grep biglinux-session-and-themes | awk '{print $2}' | sed 's/\.//g;s/-.*//')" -lt "240513" ]; then
-    if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+  if [ "$(pacman -Q biglinux-session-and-themes | awk '{print $2}' | sed 's/\.//g;s/-.*//')" -lt "240513" ]; then
+    
       yad --center \
           --title=$"BigLinux Update" \
           --form \
@@ -36,19 +36,21 @@ dialogo() {
 }
 
 while true : ; do
-  if [ -e /var/lib/pacman/db.lck ]; then
-    dialogo
-  elif [ -n "$(pgrep pamac-manager)" ]; then
-    dialogo
-  fi
-  if grep -q 'org.biglinux.batteryandperformance' ~/.config/plasma-org.kde.plasma.desktop-appletsrc && [[ -e /usr/sbin/kwriteconfig6 ]] || grep -q '1' ~/.config/enable_latte 2> /dev/null && [[ -e /usr/sbin/kwriteconfig6 ]]; then
-    /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
-  elif [ -d ~/.local/share/plasma/plasmoids/org.kde.netspeedWidget -a -d ~/.local/share/plasma/plasmoids/org.kde.windowtitle ] &&  [[ -e /usr/sbin/kwriteconfig6 ]]; then
-    /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
-  elif [ -L ~/.local/share/plasma/plasmoids/org.kde.plasma.systemtray ];then
-    /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
-  elif [ "$(pacman -Q | grep biglinux-session-and-themes | awk '{print $2}' | sed 's/\.//g;s/-.*//')" -lt "240513" ]; then
-    break
+  if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+    if [ -e /var/lib/pacman/db.lck ]; then
+      dialogo
+    elif [ -n "$(pgrep pamac-manager)" ]; then
+      dialogo
+    fi
+    if grep -q 'org.biglinux.batteryandperformance' ~/.config/plasma-org.kde.plasma.desktop-appletsrc && [[ -e /usr/sbin/kwriteconfig6 ]] || grep -q '1' ~/.config/enable_latte 2> /dev/null && [[ -e /usr/sbin/kwriteconfig6 ]]; then
+      /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
+    elif [ -d ~/.local/share/plasma/plasmoids/org.kde.netspeedWidget -a -d ~/.local/share/plasma/plasmoids/org.kde.windowtitle ] &&  [[ -e /usr/sbin/kwriteconfig6 ]]; then
+      /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
+    elif [ -L ~/.local/share/plasma/plasmoids/org.kde.plasma.systemtray ];then
+      /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
+    elif [ "$(pacman -Q biglinux-session-and-themes | awk '{print $2}' | sed 's/\.//g;s/-.*//')" -gt "240513" ] && [[ -e /usr/sbin/kwriteconfig6 ]] && [ ! -d ~/.local/share/plasma/plasmoids/org.kde.netspeedWidget -o ! -d ~/.local/share/plasma/plasmoids/org.kde.windowtitle ] && [ ! -L ~/.local/share/plasma/plasmoids/org.kde.plasma.systemtray ]; then
+      break
+    fi
   fi
   sleep 5
 done
