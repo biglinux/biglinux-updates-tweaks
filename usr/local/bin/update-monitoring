@@ -47,6 +47,8 @@ while true : ; do
     /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
   elif [ -L ~/.local/share/plasma/plasmoids/org.kde.plasma.systemtray ];then
     /usr/share/bigbashview/apps/biglinux-themes-gui/after-plasma6-update-dialog.sh
+  elif [ "$(pacman -Q | grep biglinux-session-and-themes | awk '{print $2}' | sed 's/\.//g;s/-.*//')" -lt "240513" ]; then
+    break
   fi
   sleep 5
 done
