@@ -70,7 +70,7 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
 }
 
 post_install() {
-    ls -n /usr/bin/qdbus6 /usr/local/bin/qdbus
+    ln -n /usr/bin/qdbus6 /usr/local/bin/qdbus
     systemctl enable --now polkit-1-delete.path
     systemctl enable --now timedate-check.service
 }
