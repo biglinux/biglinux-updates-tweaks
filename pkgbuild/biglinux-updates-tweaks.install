@@ -2,10 +2,10 @@ post_upgrade() {
 
     # Filter active servers
     servers=$(grep -v '.*#.*Server' /etc/pacman.d/mirrorcdn | grep Server)
-    
+
     # If have one of these two addresses, replace file content
     if echo "$servers" | grep -q -e 'http://manjaro.biglinux.com.br' -e 'http://mirrors2.manjaro.org/repo/'; then   
-  
+
         # Verify first Server line for stable
         version=$(echo "$servers" | grep -m1 'Server' /etc/pacman.d/mirrorcdn | grep -o '\bstable\b')
 
@@ -64,9 +64,13 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
     # Update Menus
     systemctl enable --now update-aplications-menu.service
 
+    # Link qdbus
+    ls -n /usr/bin/qdbus6 /usr/local/bin/qdbus
+
 }
 
 post_install() {
+    ls -n /usr/bin/qdbus6 /usr/local/bin/qdbus
     systemctl enable --now polkit-1-delete.path
     systemctl enable --now timedate-check.service
 }
