@@ -65,12 +65,12 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
     systemctl enable --now update-aplications-menu.service
 
     # Link qdbus
-    ln -n /usr/bin/qdbus6 /usr/local/bin/qdbus
+    ln -s /usr/bin/qdbus6 /usr/local/bin/qdbus
 
 }
 
 post_install() {
-    ln -n /usr/bin/qdbus6 /usr/local/bin/qdbus
+    ln -s /usr/bin/qdbus6 /usr/local/bin/qdbus
     systemctl enable --now polkit-1-delete.path
     systemctl enable --now timedate-check.service
 }
