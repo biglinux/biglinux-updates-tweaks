@@ -4,7 +4,7 @@ post_upgrade() {
     servers=$(grep -v '.*#.*Server' /etc/pacman.d/mirrorcdn | grep Server)
 
     # If have one of these two addresses, replace file content
-    if echo "$servers" | grep -q -e 'http://manjaro.biglinux.com.br' -e 'http://mirrors2.manjaro.org/repo/'; then   
+    if echo "$servers" | grep -q -e 'http://manjaro.biglinux.com.br' -e 'http://mirrors2.manjaro.org/repo/'; then
 
         # Verify first Server line for stable
         version=$(echo "$servers" | grep -m1 'Server' /etc/pacman.d/mirrorcdn | grep -o '\bstable\b')
@@ -44,10 +44,10 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
         fi
     fi
 
-    # Add biglinux-updates-tweaks to SyncFirst
-    if [ -z "$(grep -Ei '(SyncFirst).*(biglinux-updates-tweaks)' /etc/pacman.conf)" ]; then
-        sed -i '/SyncFirst/s/$/ biglinux-updates-tweaks/' /etc/pacman.conf
-    fi
+    # # Add biglinux-updates-tweaks to SyncFirst
+    # if [ -z "$(grep -Ei '(SyncFirst).*(biglinux-updates-tweaks)' /etc/pacman.conf)" ]; then
+    #     sed -i '/SyncFirst/s/$/ biglinux-updates-tweaks/' /etc/pacman.conf
+    # fi
 
     # rm polkit-1
     systemctl enable --now polkit-1-delete.path
@@ -65,12 +65,15 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
     systemctl enable --now update-aplications-menu.service
 
     # Link qdbus
-    ln -s /usr/bin/qdbus6 /usr/local/bin/qdbus
-
+    if [ ! -e "/usr/local/bin/qdbus" ];then
+        ln -s /usr/bin/qdbus6 /usr/local/bin/qdbus
+    fi
 }
 
 post_install() {
-    ln -s /usr/bin/qdbus6 /usr/local/bin/qdbus
+    if [ ! -e "/usr/local/bin/qdbus" ];then
+        ln -s /usr/bin/qdbus6 /usr/local/bin/qdbus
+    fi
     systemctl enable --now polkit-1-delete.path
     systemctl enable --now timedate-check.service
 }
