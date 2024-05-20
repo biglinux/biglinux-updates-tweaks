@@ -55,9 +55,9 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
 
     # Enable update-monitoring.path
     for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
-        sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl --user enable --now update-monitoring.service
+        sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user enable --now update-monitoring.service
         if [ "$(systemctl is-active --user update-monitoring.service)" != "active" ];then
-            sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl --user restart update-monitoring.service
+            sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user restart update-monitoring.service
         fi
     done
 
