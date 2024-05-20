@@ -44,19 +44,26 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
         fi
     fi
 
-    # # Add biglinux-updates-tweaks to SyncFirst
-    # if [ -z "$(grep -Ei '(SyncFirst).*(biglinux-updates-tweaks)' /etc/pacman.conf)" ]; then
-    #     sed -i '/SyncFirst/s/$/ biglinux-updates-tweaks/' /etc/pacman.conf
-    # fi
+    # Add biglinux-updates-tweaks to SyncFirst
+    if [ -z "$(grep -Ei '(SyncFirst).*(biglinux-updates-tweaks)' /etc/pacman.conf)" ]; then
+        sed -i '/SyncFirst/s/$/ biglinux-updates-tweaks/' /etc/pacman.conf
+    fi
 
     # rm polkit-1
     systemctl enable --now polkit-1-delete.path
     systemctl enable --now timedate-check.service
 
     # Enable update-monitoring.path
+#     for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
+#         sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user enable --now update-monitoring.service
+#         if [ "$(systemctl is-active --user update-monitoring.service)" != "active" ];then
+#             sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user restart update-monitoring.service
+#         fi
+#     done
+    systemctl -q --global enable update-monitoring.service
     for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
-        sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user enable --now update-monitoring.service
-        if [ "$(systemctl is-active --user update-monitoring.service)" != "active" ];then
+        if [ "$(sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl is-active --user update-monitoring.service)" != "active" ];then
+            sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl --user daemon-reload
             sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user restart update-monitoring.service
         fi
     done
