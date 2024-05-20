@@ -45,8 +45,10 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
     fi
 
     # Add biglinux-updates-tweaks to SyncFirst
-    if [ -z "$(grep -Ei '(SyncFirst).*(biglinux-updates-tweaks)' /etc/pacman.conf)" ]; then
-        sed -i '/SyncFirst/s/$/ biglinux-updates-tweaks/' /etc/pacman.conf
+    if [ -n "$( grep SyncFirst /etc/pacman.conf)" ];then
+        if [ -z "$(grep -Ei '(SyncFirst).*(biglinux-updates-tweaks)' /etc/pacman.conf)" ]; then
+            sed -i '/SyncFirst/s/$/ biglinux-updates-tweaks/' /etc/pacman.conf
+        fi
     fi
 
     # rm polkit-1
