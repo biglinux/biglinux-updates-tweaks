@@ -2,45 +2,47 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the biglinux-updates-tweaks package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-updates-tweaks\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: attranslate\n"
+"X-Generator: Poedit 3.4.4\n"
 
 msgid "Making adjustments to the system..."
-msgstr "Anpassungen am System vornehmen..."
+msgstr "Anpassungen am System vornehmen ..."
 
 msgid "BigLinux is pleased to bring you a major update!"
-msgstr "BigLinux freut sich, Ihnen ein großes Update zu präsentieren!"
+msgstr "BigLinux ist erfreut, Ihnen ein größeres Update präsentieren zu können!"
 
 msgid ""
 "As part of this update, we are introducing new desktop layouts to further enhance your user "
 "experience."
 msgstr ""
-"Im Rahmen dieses Updates führen wir neue Desktop-Layouts ein, um Ihr Benutzererlebnis weiter zu "
-"verbessern."
+"Im Zuge dieser Aktualisierung führen wir neue Desktop-Layouts ein, um Ihre Benutzerfahrung "
+"weiter zu verbessern."
 
 msgid "Please be aware that, due to this change,"
-msgstr "Bitte beachten Sie, dass aufgrund dieser Änderung,"
+msgstr "Bitte seien Sie sich bewusst, dass aufgrund dieser Änderung "
 
 msgid "all customizations to your desktop layout will be lost."
-msgstr "Alle Anpassungen an Ihrem Desktop-Layout gehen verloren."
+msgstr "alle individuellen Anpassungen an Ihrem Desktop-Layout verloren gehen."
 
 msgid ""
 "This includes icons, wallpapers, panel arrangements, widgets, and any other layout-related "
 "customizations."
 msgstr ""
-"Dies umfasst Symbole, Hintergrundbilder, Panel-Anordnungen, Widgets und alle anderen "
-"layoutbezogenen Anpassungen."
+"Dazu gehören Icons, Hintergrundbilder, Bedienfeldanordnungen, Widgets und alle anderen Layout-"
+"bezogenen individuellen Anpassungen."
 
 msgid "BigLinux Update"
-msgstr "BigLinux Update"
+msgstr "BigLinux-Aktualisierung"
