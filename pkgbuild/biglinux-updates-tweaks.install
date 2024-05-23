@@ -62,13 +62,20 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
 #             sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user restart update-monitoring.service
 #         fi
 #     done
-    systemctl -q --global enable update-monitoring.service
-    for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
-        if [ "$(sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl is-active --user update-monitoring.service)" != "active" ];then
-            sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl --user daemon-reload
-            sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user restart update-monitoring.service
-        fi
-    done
+    if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+        systemctl -q --global enable update-monitoring.service
+        for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
+            if [ "$(sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl is-active --user update-monitoring.service)" != "active" ];then
+                sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl --user daemon-reload
+                sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user restart update-monitoring.service
+            fi
+        done
+    elif [ "$(systemctl --global is-enabled update-monitoring.service)" = "enabled" ];then
+        systemctl -q --global disable update-monitoring.service
+        for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
+            sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user stop update-monitoring.service
+        done
+    fi
 
     # Update Menus
     systemctl enable --now update-aplications-menu.service
