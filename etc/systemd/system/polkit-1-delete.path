@@ -3,6 +3,7 @@ Description=Monitor /etc/pam.d/polkit-1 for modifications
 
 [Path]
 PathChanged=/etc/pam.d/polkit-1
+PathExists=/etc/pam.d/polkit-1
 Unit=polkit-1-delete.service
 
 [Install]
