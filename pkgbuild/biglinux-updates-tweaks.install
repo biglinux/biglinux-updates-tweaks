@@ -84,6 +84,11 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
     if [ ! -e "/usr/local/bin/qdbus" ];then
         ln -s /usr/bin/qdbus6 /usr/local/bin/qdbus
     fi
+    
+    # Remove SyncFirst from /etc/pacman.conf
+    if grep -q SyncFirst /etc/pacman.conf; then 
+        sed -i '/SyncFirst/d' /etc/pacman.conf
+    fi
 }
 
 post_install() {
