@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+mem=$(ps aux | grep -E pamac-tray-plasma | grep -v grep | awk '{print $11, int($6/1024)}' | grep pamac-tray-plasma | awk '{print $2}')
+
+if [ "$mem" -gt "128" ];then
+  killall pamac-tray-plasma
+  pamac-tray-plasma &
+fi
+
+
+
+

@@ -89,6 +89,9 @@ Include=/etc/pacman.d/mirrorlist" > /etc/pacman.d/mirrorcdn
     if grep -q SyncFirst /etc/pacman.conf; then 
         sed -i '/SyncFirst/d' /etc/pacman.conf
     fi
+
+    # Enable pamac-tray-plasma-check-and-reload
+    systemctl enable --now pamac-tray-plasma-verify-and-reload
 }
 
 post_install() {
@@ -97,4 +100,5 @@ post_install() {
     fi
     systemctl enable --now polkit-1-delete.path
     systemctl enable --now timedate-check.service
+    systemctl enable --now pamac-tray-plasma-verify-and-reload
 }

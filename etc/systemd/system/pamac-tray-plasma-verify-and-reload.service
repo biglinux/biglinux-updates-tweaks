@@ -1,0 +1,5 @@
+[Unit]
+Description=checks memory usage and restarts if it is using memory execively
+
+[Service]
+ExecStart=/usr/local/bin/pamac-tray-plasma-check-and-reload
