@@ -103,5 +103,9 @@ post_install() {
     fi
     systemctl enable --now polkit-1-delete.path
     systemctl enable --now timedate-check.service
-    systemctl enable --now pamac-tray-plasma-verify-and-reload
+    # Enable pamac-tray-plasma-check-and-reload
+    systemctl -q --global enable pamac-tray-plasma-verify-and-reload.timer
+    for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
+        sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl start -q --user pamac-tray-plasma-verify-and-reload.timer
+    done
 }
