@@ -105,7 +105,4 @@ post_install() {
     systemctl enable --now timedate-check.service
     # Enable pamac-tray-plasma-check-and-reload
     systemctl -q --global enable pamac-tray-plasma-verify-and-reload.timer
-    for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
-        sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl start -q --user pamac-tray-plasma-verify-and-reload.timer
-    done
 }
