@@ -3,10 +3,10 @@
 mem=$(ps aux | grep -E pamac-tray-plasma | grep -v grep | awk '{print $11, int($6/1024)}' | grep pamac-tray-plasma | awk '{print $2}')
 
 if [ "$mem" -gt "128" ];then
-  killall pamac-tray-plasma
-  pamac-tray-plasma &
+  systemctl restart --user app-pamac\\x2dtray\\x2dplasma@autostart.service
+  echo "reload" >> /tmp/pamac-tray-plasma
 fi
 
-
-
-
+if [ "$(cat /tmp/pamac-tray-plasma | wc -l)" -ge "3" ];then
+  systemctl stop --user app-pamac\\x2dtray\\x2dplasma@autostart.service
+fi

@@ -2,7 +2,9 @@
 Description=checks memory usage and restarts if it is using memory execively
 
 [Timer]
-OnCalendar=hourly
+# OnCalendar=hourly
+OnBootSec=1min
+OnUnitActiveSec=1min
 Persistent=true
 
 [Install]
